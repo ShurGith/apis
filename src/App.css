@@ -1,0 +1,19 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+ul{
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+li{
+  display: inline-block;
+  margin: 0 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+}
