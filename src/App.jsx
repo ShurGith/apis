@@ -5,6 +5,7 @@ import Paises from './pages/Paises'
 import Contacto from './pages/Contacto'
 import Nosotros from './pages/Nosotros'
 import Productos from './pages/Productos'
+import Producto from './components/Producto'
 import { Route, Routes } from 'react-router-dom'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/nosotros" element={<Nosotros />} />
         <Route path="/productos" element={<Productos />} />
+        <Route path="/productos/:id" element={<Producto />} />
       </Routes>
     </div>
   )
