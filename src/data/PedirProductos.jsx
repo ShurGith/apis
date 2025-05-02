@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Datos from './Datos'
 function PedirProductos() {
-    const apiUrl = Datos().apiUrl
+    const apiUrl = Datos().apiUrl + '?limit=0'
     const [productos, setProductos] = useState([])
 
     async function getProductos() {

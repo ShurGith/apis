@@ -28,7 +28,7 @@ function Producto({ itemId }) {
     if (producto.images) {
         itImages = producto.images.length
     }
-    console.log(producto.images)
+
     return (
         <div key={producto.id}
             className="flex mx-auto items-center justify-center max-w-fit border rounded-2xl border-gray-400 p-8" >
