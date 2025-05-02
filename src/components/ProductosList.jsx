@@ -12,6 +12,7 @@ function ProductosList({ productos }) {
                                 <img className="w-full max-h-24" src={product.thumbnail} alt={product.title} />
                                 <h3 className="text-gray-600 text-xl">{product.title}</h3>
                                 <p className="text-gray-500 text-sm">{product.price}</p>
+                                <p className="text-gray-500 text-sm">Imágenes: {product.images.length}</p>
                             </Link>
                         </div>
                     ))}
