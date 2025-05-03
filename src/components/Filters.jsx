@@ -4,7 +4,7 @@ import FilterRemover from './FilterRemover';
 import { useContext } from "react";
 import { FiltersContext } from "../context/filters";
 
-function Filters({ categorias }) {
+function Filters() {
     const { filters, setFilters } = useContext(FiltersContext)
 
     const chequeaAplicados = (num) => {
@@ -30,24 +30,14 @@ function Filters({ categorias }) {
     }
 
 
-    function quitarFiltros() {
-        setFilters(prevState => ({
-            ...prevState,
-            category: "all",
-            minPrice: 0,
-            aplicados: false,
-        }))
-        document.querySelector('[id*="headlessui-combobox-input-"]').value = ''
-    }
-
     return (
         <div className="grid grid-cols-12 w-full items-center mb-4">
 
             <RangeSelector handlefuncion={handleChangeMinPrice} />
 
-            <CatSelector categories={categorias} />
+            <CatSelector />
 
-            {filters.aplicados && <FilterRemover quitarFiltros={quitarFiltros} />}
+            {filters.aplicados && <FilterRemover />}
         </div>
     )
 }
