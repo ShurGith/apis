@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom"
 import Filters from "./Filters";
 import useFilters from "../hooks/useFilters";
+import { FiltersContext } from "../context/filters";
+import { useContext } from "react";
+import Carritos from "./Carritos";
+
 
 function ProductosList() {
 
     const { categorias, filtrados, aProductos2, ProductoFiltraCategoria } = useFilters()
+    const { filtraCategoria } = useContext(FiltersContext)
+
+
 
     return (
         <>
@@ -20,10 +27,12 @@ function ProductosList() {
                                 <h3 className="text-gray-600 text-xl">{product.title}</h3>
                             </Link>
                             <p className="text-gray-500 text-sm">{product.price}</p>
-                            <p onClick={ProductoFiltraCategoria}
-                                className="border px-4 py-1 rounded-xl bg-blue-400 capitalize cursor-pointer text-white w-fit mx-auto text-sm">
+                            <p onClick={() => filtraCategoria(product.category)}
+                                className="px-4 py-1 rounded-xl bg-blue-400 capitalize cursor-pointer text-white w-fit mx-auto text-sm">
                                 {product.category}
                             </p>
+                            <Carritos producto={product} />
+
                             <p className="text-gray-500 text-sm">Imágenes: {product.images.length}</p>
 
                         </div>

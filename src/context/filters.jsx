@@ -8,11 +8,25 @@ export function FiltersProvider({ children }) {
         minPrice: 0,
         aplicados: false,
     })
+    const [showCat, setShowCat] = useState('')
+    const [selectedCategory, setSelectedCategory] = useState(null)
+
+    const filtraCategoria = (valor) => {
+        setShowCat(valor)
+        valor = valor.toLowerCase()
+        setFilters({ ...filters, category: valor, aplicados: true });
+    }
+
 
     return (
         <FiltersContext.Provider value={{
             filters,
-            setFilters
+            setFilters,
+            showCat,
+            setShowCat,
+            selectedCategory,
+            setSelectedCategory,
+            filtraCategoria
         }}>
             {children}
         </FiltersContext.Provider>

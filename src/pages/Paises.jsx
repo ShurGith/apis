@@ -29,11 +29,8 @@ function App() {
         losPaises()
     }, [])
 
-
     const paises = [...datos];
-    const ordenar = paises.sort((a, b) => a.name.common > b.name.common ? 1 : -1);
-
-
+    const ordenar = paises.sort((a, b) => a.name.common > b.name.common ? 1 : -1); 1
 
     return (
         <>

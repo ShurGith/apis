@@ -2,7 +2,7 @@ import { CheckCircleIcon } from '@heroicons/react/20/solid'
 import { FiltersContext } from "../context/filters";
 import { useContext } from "react";
 function FilterRemover() {
-    const { setFilters } = useContext(FiltersContext)
+    const { setFilters, setShowCat, setSelectedCategory } = useContext(FiltersContext)
 
     function quitarFiltros() {
         setFilters(prevState => ({
@@ -11,7 +11,9 @@ function FilterRemover() {
             minPrice: 0,
             aplicados: false,
         }))
-        document.querySelector('[id*="headlessui-combobox-input-"]').value = ''
+        setShowCat('')
+        setSelectedCategory(null)
+
     }
 
 

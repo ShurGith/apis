@@ -11,7 +11,7 @@ function useFilters() {
         new Set(productos.map(producto => producto.category))
     ).map((categoria, index) => ({
         id: index + 1,
-        name: categoria
+        name: categoria.charAt(0).toUpperCase() + categoria.slice(1)
     }));
 
     const filterProducts = (products) => {
@@ -28,8 +28,10 @@ function useFilters() {
 
 
     function ProductoFiltraCategoria(e) {
-        setFilters({ ...filters, category: e.target.innerHTML, aplicados: true });
+        setFilters({ ...filters, category: e, aplicados: true });
     }
+
+
 
     const filtrados = filterProducts(aProductos2)
 
