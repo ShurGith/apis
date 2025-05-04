@@ -11,10 +11,11 @@ export function CarritoProvider({ children }) {
 
     });
 
-    const alCarrito = (producto, quantity = 1) => {
+    const alCarrito = (producto, quantity = 1, operacion = false) => {
         setCarrito((prev) => {
             const yaExiste = prev.find((item) => item.id === producto.id);
             if (yaExiste) {
+                operacion ? quantity = -quantity : quantity;
                 return prev.map((item) =>
                     item.id === producto.id
                         ? { ...item, cantidad: item.cantidad + quantity }

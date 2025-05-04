@@ -3,7 +3,8 @@ import Filters from "./Filters";
 import useFilters from "../hooks/useFilters";
 import { FiltersContext } from "../context/filters";
 import { useContext } from "react";
-import ProductoCarritos from "./ProductoCarritos";
+import ProductoCarritos from "./ProductoBotonesALCarrito";
+import Boton from "./elements/BotonTemplate";
 
 
 function ProductosList() {
@@ -23,10 +24,10 @@ function ProductosList() {
                                 <h3 className="text-gray-600 text-xl">{product.title}</h3>
                             </Link>
                             <p className="text-gray-500 text-sm">{product.price}</p>
-                            <p onClick={() => filtraCategoria(product.category)}
-                                className="px-4 py-1 rounded-xl bg-blue-400 capitalize cursor-pointer text-white w-fit mx-auto text-sm">
-                                {product.category}
-                            </p>
+
+                            <Boton Icono="" texto={product.category} laAccion={() => filtraCategoria(product.category)}
+                                addClass="cursor-pointer bg-blue-400 hover:bg-blue-600 capitalize" />
+                            <p>{product.stock}</p>
                             <ProductoCarritos producto={product} />
                         </div>
                     ))}
