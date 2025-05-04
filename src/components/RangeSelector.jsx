@@ -38,7 +38,7 @@ function RangeSelector() {
                 onChange={handleChangeMinPrice}
                 value={filters.minPrice}
             />
-            <output className="text-lg text-gray-600">${filters.minPrice}</output>
+            <output className="text-lg text-gray-600">€{filters.minPrice}</output>
         </div>
     )
 }

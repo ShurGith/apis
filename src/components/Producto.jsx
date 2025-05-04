@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import Datos from '../data/Datos'
+import { useContext } from "react"
+import { CarritoContext } from "../context/carrito"
 
-
-function Producto({ itemId }) {
+function Producto({ itemId, addToCart }) {
     const [producto, setProducto] = useState([])
+    const { alCarrito } = useContext(CarritoContext)
     let itImages = 0
 
     const params = useParams()
@@ -47,12 +49,12 @@ function Producto({ itemId }) {
                 <p className="text-gray-500 text-sm">{producto.price}</p>
                 <p className="max-w-[50%] mx-auto text-gray-500 text-sm">{producto.description}</p>
                 <button
+                    onClick={() => alCarrito(producto)}
                     type="button"
                     className="cursor-pointer inline-flex items-center gap-x-2 rounded-md 
                     transition-all duration-300 ease-in-out
                     bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs
-                     hover:bg-indigo-500 hover:shadow-sm hover:shadow-black
-                     focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                     hover:bg-indigo-500 hover:shadow-sm hover:shadow-black"
                 >
                     Agregar al carrito
                 </button>

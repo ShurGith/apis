@@ -4,8 +4,26 @@ import { Link } from "react-router-dom"
 
 
 function Carrito() {
-    const { carrito, quitarCarrito, eliminaCarrito } = useContext(CarritoContext)
+    const { carrito, quitarCarrito, clearCarrito } = useContext(CarritoContext)
+    let totaless = 0
+    //console.log(carrito)
+    const totalesse = carrito.map((item) => {
+        console.log(item.price);
+        console.log(item.cantidad);
+        totaless = totaless + item.price * item.cantidad
+    })
+    console.log(totaless);
 
+
+
+    if (carrito.length === 0) {
+        return (
+            <div className="flex flex-col gap-2 items-center justify-center">
+                <h1 className="text-2xl text-gray-600">Tu carrito está vacío</h1>
+                <Link to="/" className="text-blue-500">Volver al inicio</Link>
+            </div>
+        )
+    }
 
     return (
         <div className="flex flex-col gap w-full border rounded-2xl border-gray-400 p-8">
@@ -17,7 +35,7 @@ function Carrito() {
                         <p>{item.title}</p>
                         <p>{item.cantidad}</p>
                         <p>{item.price}</p>
-                        <p>{item.price * item.cantidad}</p>
+                        <p className="font-bold">{(item.price * item.cantidad).toFixed(2)}</p>
                     </div>
                     <div className="flex gap-2">
                         <Link to={`/productos/${item.id}`}
@@ -33,7 +51,7 @@ function Carrito() {
             <div className="flex gap-2 items-center justify-between border-t-2 border-gray-400 p-8">
                 <div className="flex gap-2 items-center justify-between p-2">
                     <p>Total:</p>
-                    <p>{carrito.reduce((acc, item) => acc + item.price * item.cantidad, 0)} €</p>
+                    <p>{carrito.reduce((acc, item) => acc + (item.price * item.cantidad), 0).toFixed(2)} €</p>
                 </div>
                 <div className="flex gap-2 items-center justify-between p-2">
                     <p>Cantidad:</p>
@@ -45,7 +63,7 @@ function Carrito() {
                         Pagar
                     </button>
                     <button
-                        onClick={() => eliminaCarrito()}
+                        onClick={() => clearCarrito()}
                         className="px-4 py-1 rounded-xl bg-red-500 cursor-pointer text-white w-fit mx-auto text-sm hover:bg-red-600">
                         Eliminar Carrito
                     </button>
