@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import Enlaces from './Enlaces'
-import { TiShoppingCart } from "react-icons/ti";
+import { Icon } from "@iconify/react";
 import { useContext } from 'react';
 import { CarritoContext } from '../context/carrito';
 function Navbar() {
@@ -21,7 +21,7 @@ function Navbar() {
             </ul>
             <div className='size-10'>
                 {countCarrito > 0 && <NavLink to={'/carrito'} className='relative'>
-                    <TiShoppingCart className='size-10' color='white' />
+                    <Icon icon="solar:cart-large-broken" width="40" height="40" color="white" />
                     <output className='absolute -top-2 -right-2 bg-black text-white w-6 h-6 rounded-full flex justify-center items-center'>
                         {countCarrito}
                     </output>

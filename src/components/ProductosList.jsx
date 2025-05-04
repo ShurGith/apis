@@ -3,20 +3,16 @@ import Filters from "./Filters";
 import useFilters from "../hooks/useFilters";
 import { FiltersContext } from "../context/filters";
 import { useContext } from "react";
-import Carritos from "./Carritos";
+import ProductoCarritos from "./ProductoCarritos";
 
 
 function ProductosList() {
-
     const { categorias, filtrados, aProductos2, ProductoFiltraCategoria } = useFilters()
     const { filtraCategoria } = useContext(FiltersContext)
-
-
 
     return (
         <>
             <Filters categorias={categorias} />
-
             <div>
                 <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-4">
                     {aProductos2 && filtrados.map((product) => (
@@ -31,8 +27,7 @@ function ProductosList() {
                                 className="px-4 py-1 rounded-xl bg-blue-400 capitalize cursor-pointer text-white w-fit mx-auto text-sm">
                                 {product.category}
                             </p>
-                            <Carritos producto={product} />
-
+                            <ProductoCarritos producto={product} />
                         </div>
                     ))}
                 </div>

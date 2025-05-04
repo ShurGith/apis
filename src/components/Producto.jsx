@@ -4,20 +4,18 @@ import Datos from '../data/Datos'
 import { useContext } from "react"
 import { CarritoContext } from "../context/carrito"
 
-function Producto({ itemId, addToCart }) {
+function Producto() {
     const [producto, setProducto] = useState([])
     const { alCarrito } = useContext(CarritoContext)
     let itImages = 0
 
-    const params = useParams()
-    itemId = params.id
-    const apiUrl = Datos().apiUrl + '/' + itemId
+    const apiUrl = Datos().apiUrl + '/' + useParams().id
 
     useEffect(() => {
         fetch(apiUrl)
             .then(res => res.json())
             .then(res => setProducto(res))
-    }, [])
+    }, [apiUrl])
 
     function handleClick(e) {
         document.querySelector('#principal').src = e.target.src
