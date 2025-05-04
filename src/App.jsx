@@ -10,7 +10,7 @@ import Footer from './components/Footer.jsx'
 import { FiltersProvider } from './context/filters.jsx'
 import { CarritoProvider } from './context/carrito.jsx'
 */
-import { Blog, Home, Paises, Contacto, Nosotros, Productos, Producto, Navbar, Footer } from './data/Importers.jsx'
+import { Blog, Home, Paises, Carrito, Contacto, Nosotros, Productos, Producto, Navbar, Footer } from './data/Importers.jsx'
 import { FiltersProvider, CarritoProvider } from './data/Importers.jsx'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
@@ -28,6 +28,7 @@ function App() {
               <Route path="/paises" element={<Paises />} />
               <Route path="/contacto" element={<Contacto />} />
               <Route path="/nosotros" element={<Nosotros />} />
+              <Route path="/carrito" element={<Carrito />} />
               <Route path="/productos" element={<Productos />} />
               <Route path="/productos/:id" element={<Producto />} />
               <Route path="*" element={<h1 className='text-4xl text-gray-500'>404 Pagina no encontrada</h1>} />

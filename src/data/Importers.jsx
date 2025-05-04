@@ -16,6 +16,7 @@ export { default as Home } from "../pages/Home"
 export { default as Paises } from '../pages/Paises'
 export { default as Contacto } from '../pages/Contacto'
 export { default as Nosotros } from '../pages/Nosotros'
+export { default as Carrito } from '../pages/Carrito.jsx'
 export { default as Productos } from '../pages/Productos'
 export { default as Producto } from '../components/Producto'
 export { default as Navbar } from '../components/Navbar.jsx'

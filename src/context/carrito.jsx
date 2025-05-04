@@ -31,6 +31,10 @@ export function CarritoProvider({ children }) {
     };
 
 
+    const eliminaCarrito = () => {
+        setCarrito([]);
+    }
+
 
     const quitarCarrito = (id) => {
         setCarrito((prev) => prev.filter((item) => item.id !== id));
@@ -47,7 +51,8 @@ export function CarritoProvider({ children }) {
             setCarrito,
             alCarrito,
             quitarCarrito,
-            yaExiste
+            yaExiste,
+            eliminaCarrito
         }}>
             {children}
         </CarritoContext.Provider>

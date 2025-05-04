@@ -33,8 +33,6 @@ function ProductosList() {
                             </p>
                             <Carritos producto={product} />
 
-                            <p className="text-gray-500 text-sm">Imágenes: {product.images.length}</p>
-
                         </div>
                     ))}
                 </div>
