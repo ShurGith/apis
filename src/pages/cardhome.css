@@ -1,0 +1,29 @@
+.card-container {
+  position: relative; /* Permite posicionar la etiqueta de forma absoluta */
+  width: 150px;
+  height: 200px;
+  border-radius: 10px; /* Bordes redondeados para el card */
+  background-color: #f0f0f0; /* Color de fondo del card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para el card */
+  overflow: hidden; /* Oculta cualquier contenido que sobresalga, importante para la etiqueta */
+  padding: 10px;
+}
+
+.card-tag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ff6347; /* Color de fondo de la etiqueta */
+  color: white; /* Color del texto de la etiqueta */
+  padding: 5px 10px;
+  border-bottom-right-radius: 10px; /* Borde redondeado inferior derecho para la etiqueta */
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 1; /* Asegura que la etiqueta esté sobre el card */
+
+}
+
+/* Estilo opcional para el contenido dentro del card */
+.card-content {
+  padding: 15px;
+}

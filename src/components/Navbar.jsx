@@ -20,7 +20,7 @@ function Navbar() {
                     </NavLink>
                 ))}
             </ul>
-            <div className='size-10'>
+            <div className='relative group'>
                 {countCarrito > 0 && <NavLink to={'/carrito'} className='relative'>
                     <Icon icon="solar:cart-large-broken" width="40" height="40" color="white" />
                     <output className='absolute -top-2 -right-2 bg-black text-white w-6 h-6 rounded-full flex justify-center items-center'>
@@ -35,3 +35,4 @@ function Navbar() {
     )
 }
 export default Navbar
+

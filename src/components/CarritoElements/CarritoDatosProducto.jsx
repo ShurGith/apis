@@ -4,7 +4,7 @@ import Boton from "../elements/BotonTemplate";
 import BotonesCarrito from "./BotonesCarrito";
 
 function ProductoDatos({ item }) {
-    const { alCarrito, carrito } = useContext(CarritoContext)
+    const { alCarrito } = useContext(CarritoContext)
     const [inputCantidad, setInputCantidad] = useState(1)
     const [inputCantidadMaxima, setInputCantidadMaxima] = useState(item.stock);
 
