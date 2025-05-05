@@ -1,7 +1,5 @@
 import { useContext, useState } from "react"
 import { CarritoContext } from "../../context/carrito"
-
-import { Icon } from "@iconify/react";
 import Boton from "../elements/BotonTemplate";
 import BotonesCarrito from "./BotonesCarrito";
 

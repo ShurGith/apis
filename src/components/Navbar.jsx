@@ -3,6 +3,7 @@ import Enlaces from './Enlaces'
 import { Icon } from "@iconify/react";
 import { useContext } from 'react';
 import { CarritoContext } from '../context/carrito';
+import ModalCarrito from './CarritoElements/ModalCarrito';
 function Navbar() {
     const { carrito } = useContext(CarritoContext)
     const countCarrito = carrito.reduce((acc, item) => acc + item.cantidad, 0);
@@ -26,6 +27,8 @@ function Navbar() {
                         {countCarrito}
                     </output>
                 </NavLink>}
+                <ModalCarrito />
+
             </div>
 
         </nav>
